@@ -547,13 +547,23 @@ def dashboard():
 # 8. START THE SERVER
 # ============================================================
 
+# if __name__ == "__main__":
+#     print("Starting MCP Server...")
+#     print("Dashboard: http://localhost/")
+#     print("Health API: http://localhost/api/health")
+#     print("REST API docs: http://localhost/docs")
+#     print("MCP endpoint: http://localhost/mcp")
+
+#     uvicorn.run(
+#         app
+#     )
+
+
 if __name__ == "__main__":
     print("Starting MCP Server...")
     print("Dashboard: http://localhost/")
-    print("Health API: http://localhost/api/health")
-    print("REST API docs: http://localhost/docs")
-    print("MCP endpoint: http://localhost/mcp")
-
     uvicorn.run(
-        app
+        app,
+        host="0.0.0.0",
+        port=8000
     )
