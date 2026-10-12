@@ -555,7 +555,5 @@ if __name__ == "__main__":
     print("MCP endpoint: http://localhost/mcp")
 
     uvicorn.run(
-        app,
-        host="0.0.0.0",
-        port=8000,
+        app
     )
