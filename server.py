@@ -6,14 +6,20 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 from mcp.server.fastmcp import FastMCP
-
+from mcp.server.transport_security import TransportSecuritySettings
 
 # ============================================================
 # 1. MCP SERVER AND TOOLS
 # ============================================================
 
-mcp = FastMCP("MCP Server")
-
+mcp = FastMCP(
+    "MCP Server",
+    stateless_http=True,
+    json_response=True,
+    transport_security=TransportSecuritySettings(
+        enable_dns_rebinding_protection=False
+    ),
+)
 
 @mcp.tool()
 def add(a: int, b: int) -> int:
