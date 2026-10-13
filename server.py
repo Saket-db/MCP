@@ -24,18 +24,21 @@ mcp = FastMCP(
 @mcp.tool()
 def add(a: int, b: int) -> int:
     """Add two numbers."""
+    print(f"Adding {a} and {b}")
     return a + b
 
 
 @mcp.tool()
 def greet(name: str) -> str:
     """Greet a person by name."""
+    print(f"Greeting {name}")
     return f"Hello, {name}!"
 
 
 @mcp.tool()
 def multiply(a: int, b: int) -> int:
     """Multiply two numbers."""
+    print(f"Multiplying {a} and {b}")
     return a * b
 
 
@@ -51,6 +54,7 @@ def divide(a: int, b: int) -> float:
 def subtract(a: int, b: int) -> int:
     """Subtract b from a."""
     return a - b
+
 
 
 # ============================================================
